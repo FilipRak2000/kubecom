@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: users-dep
+spec:
+  replicas: 3
+  selector: 
+     matchLabels:
+        app: users 
+  template:
+    metadata: 
+      labels:
+        app: users
+    spec:
+      containers:
+        - name: userscontainer
+          image: filiprak2000/minikubenodeapp:latest
+          env:
+            - name: AUTH
+              value: localhost
+        - name: auth
+          image: filiprak2000/minikubenodeauth:latest
+
+   
