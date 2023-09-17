@@ -17,8 +17,6 @@ spec:
           image: filiprak2000/minikubenodeapp:latest
           env:
             - name: AUTH
-              value: localhost
-        - name: auth
-          image: filiprak2000/minikubenodeauth:latest
+              value: "auth-serv.default"
 
    
